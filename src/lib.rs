@@ -15,7 +15,7 @@ mod tests {
 
         for codec in [
             ZfpCodec {
-                mode: ZfpCompressionMode::FixedAccuracy { tolerance: 0.04 },
+                mode: ZfpCompressionMode::FixedAccuracy { tolerance: 4.0 },
                 version: StaticCodecVersion,
             },
             ZfpCodec {
@@ -23,7 +23,7 @@ mod tests {
                 version: StaticCodecVersion,
             },
             ZfpCodec {
-                mode: ZfpCompressionMode::FixedAccuracy { tolerance: 4.0 },
+                mode: ZfpCompressionMode::FixedAccuracy { tolerance: 0.04 },
                 version: StaticCodecVersion,
             },
         ] {
