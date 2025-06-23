@@ -1,0 +1,22 @@
+[package]
+name = "numcodecs-zfp"
+version = "0.5.2"
+edition = "2024"
+
+description = "ZFP codec implementation for the numcodecs API"
+readme = "README.md"
+categories = ["compression", "encoding"]
+keywords = ["zfp", "numcodecs", "compression", "encoding"]
+
+include = ["/src", "/LICENSE", "/docs/katex.html"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ndarray = { version = "0.16.1", default-features = false }
+numcodecs = { version = "0.2.1", default-features = false }
+postcard = { version = "1.0.8", default-features = false }
+schemars = { version = "=1.0.0-alpha.15", default-features = false, features = ["derive", "preserve_order"] }
+serde = { version = "1.0.218", default-features = false, features = ["std", "derive"] }
+thiserror = { version = "2.0.12", default-features = false }
+zfp-sys = { version = "0.4.1", default-features = false, features = ["static", "round-tight-error"] }

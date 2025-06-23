@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-ndarray = "0.16.1"
-ndarray-rand = "0.15.0"
-numcodecs = "0.2.1"
-numcodecs-zfp = "0.5.2"
+ndarray = { version = "0.16.1", default-features = false }
+ndarray-rand = { version = "0.15.0", default-features = false }
+numcodecs = { version = "0.2.1", default-features = false }
+numcodecs-zfp = { version = "0.5.2", path = "zfp", default-features = false }

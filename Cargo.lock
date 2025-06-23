@@ -290,8 +290,6 @@ dependencies = [
 [[package]]
 name = "numcodecs-zfp"
 version = "0.5.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1d596869c478c0602b6667571301505543156d103a0448f37e63630e6c1b7d84"
 dependencies = [
  "ndarray",
  "numcodecs",
