@@ -27,6 +27,7 @@ jobs:
             cargo
             build-base
             cmake
+            clang20-libclang
 
       - name: Run the tests
         run: cargo test -- --nocapture
