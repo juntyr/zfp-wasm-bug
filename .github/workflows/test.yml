@@ -25,6 +25,8 @@ jobs:
           arch: x86
           packages: >
             cargo
+            build-base
+            cmake
 
       - name: Run the tests
         run: cargo test -- --nocapture
