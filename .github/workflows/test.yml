@@ -22,7 +22,7 @@ jobs:
 
       - uses: jirutka/setup-alpine@v1
         with:
-          arch: x64
+          arch: x86
           packages: >
             cargo
 
