@@ -1,0 +1,10 @@
+[package]
+name = "zfp-wasm-bug"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ndarray = "0.16.1"
+ndarray-rand = "0.15.0"
+numcodecs = "0.2.1"
+numcodecs-zfp = "0.5.2"
