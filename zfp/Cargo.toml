@@ -19,4 +19,4 @@ postcard = { version = "1.0.8", default-features = false }
 schemars = { version = "=1.0.0-alpha.15", default-features = false, features = ["derive", "preserve_order"] }
 serde = { version = "1.0.218", default-features = false, features = ["std", "derive"] }
 thiserror = { version = "2.0.12", default-features = false }
-zfp-sys = { version = "0.4.1", default-features = false, features = ["static", "round-tight-error"] }
+zfp-sys = { version = "0.4.1", default-features = false, features = ["static", "round-tight-error"], path = "../zfp-sys" }
