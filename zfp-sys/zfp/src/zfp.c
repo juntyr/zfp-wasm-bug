@@ -771,9 +771,12 @@ zfp_stream_maximum_size(const zfp_stream* zfp, const zfp_field* field)
   maxsize = ((ZFP_HEADER_MAX_BITS + ((bitstream_size)blocks) * ((bitstream_size)maxbits) + stream_word_bits - 1) & ~(stream_word_bits - 1)) / CHAR_BIT;
 
   printf("2^8-1 %llu 2^16-1 %llu 2^32-1 %llu 2^64-1 %llu\n", (unsigned long long)((unsigned char)(-1)), (unsigned long long)((unsigned short)(-1)), (unsigned long long)((unsigned int)(-1)), (unsigned long long)(-1));
+  fflush(stdout);
   printf("uint %llu uint64 %llu bitstream_size %llu size_t %llu\n", (unsigned long long)((uint)(-1)), (unsigned long long)((uint64)(-1)), (unsigned long long)((bitstream_size)(-1)), (unsigned long long)((size_t)(-1)));
+  fflush(stdout);
 
   printf("zfp_stream_maximum_size %llu %llu %llu %llu %llu %llu\n", (unsigned long long)dims, (unsigned long long)blocks, (unsigned long long)values, (unsigned long long)maxbits, (unsigned long long)maxsize, (unsigned long long)((size_t)maxsize));
+  fflush(stdout);
 
   /* check if the maxsize fits into size_t to avoid silent truncation */
   if (((size_t)maxsize) != maxsize)
