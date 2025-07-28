@@ -13,22 +13,12 @@ mod tests {
 
         let data = Array::random((1, 1, 1, 9900, 16987), Normal::new(0., 1.).unwrap());
 
-        for codec in [
-            ZfpCodec {
-                mode: ZfpCompressionMode::FixedAccuracy { tolerance: 4.0 },
-                version: StaticCodecVersion,
-            },
-            ZfpCodec {
-                mode: ZfpCompressionMode::FixedAccuracy { tolerance: 0.4 },
-                version: StaticCodecVersion,
-            },
-            ZfpCodec {
-                mode: ZfpCompressionMode::FixedAccuracy { tolerance: 0.04 },
-                version: StaticCodecVersion,
-            },
-        ] {
+        for max_prec in [30, 25, 20, 15, 10, 5, 4, 3, 2, 1] {
             eprintln!("start encode");
-            let encoded = codec
+            let encoded = ZfpCodec {
+                mode: ZfpCompressionMode::Expert { min_bits=0, max_bits=0, max_prec=max_prec, min_exp=-1075 },
+                version: StaticCodecVersion,
+            }
                 .encode(numcodecs::AnyArrayView::F32(data.view().into_dyn()).cow())
                 .expect("encode");
             eprintln!("start decode");
