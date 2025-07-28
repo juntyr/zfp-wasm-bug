@@ -16,7 +16,7 @@ mod tests {
         for max_prec in [30, 25, 20, 15, 10, 5, 4, 3, 2, 1] {
             eprintln!("start encode");
             let encoded = ZfpCodec {
-                mode: ZfpCompressionMode::Expert { min_bits=0, max_bits=0, max_prec=max_prec, min_exp=-1075 },
+                mode: ZfpCompressionMode::Expert { min_bits: 0, max_bits: 0, max_prec: max_prec, min_exp: -1075 },
                 version: StaticCodecVersion,
             }
                 .encode(numcodecs::AnyArrayView::F32(data.view().into_dyn()).cow())
